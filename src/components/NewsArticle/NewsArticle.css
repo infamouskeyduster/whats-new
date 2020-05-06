@@ -1,0 +1,16 @@
+.news-article {
+  display: flex;
+  width: 49%;
+  height: 110%;
+  background-color: grey;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+
+.news-article img {
+  height: 220px;
+  width: 80%;
+  align-self: center;
+  margin-top: 10%;
+}
