@@ -1,0 +1,14 @@
+.search-section {
+  grid-area: 1 / 2 / 2 / 6;
+  outline: 1px solid red;
+}
+
+.search-section button {
+  outline: 1px solid black;
+  background-color: white;
+}
+
+input {
+  width: 80%;
+  height: 65%;
+}
