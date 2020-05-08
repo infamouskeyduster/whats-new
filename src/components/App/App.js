@@ -19,22 +19,40 @@ class App extends Component {
       technology: technology,
       entertainment: entertainment,
       currentlyDisplayed: local,
+      filteredResult: [],
     }
-  }
+  };
 
   displaySelectedNews = (newsType) => {
-    this.setState({currentlyDisplayed: this.state[newsType]})
+    this.setState({filteredResult: []});
+    this.setState({currentlyDisplayed: this.state[newsType]});
+  };
+
+  filterNewsArticles = (inputValue) => {
+    if (inputValue.length > 0) {
+      let foundNewsArticle = this.state.currentlyDisplayed.filter(newsArticle => {
+        let capitalizedHeadline = newsArticle.headline.toUpperCase();
+        let capitalizedSearchValue = inputValue.toUpperCase();
+        if (capitalizedHeadline.includes(capitalizedSearchValue)) {
+          return newsArticle;
+        }
+      });
+      this.setState({filteredResult: foundNewsArticle});
+      
+    } else if (inputValue.length === 0) {
+      this.setState({filteredResult: []});
+    }
   };
 
   render () {
     return (
       <main className="app">
         <Menu displaySelectedNews={this.displaySelectedNews}/>
-        <SearchForm />
-        <NewsContainer currentlyDisplayed={this.state.currentlyDisplayed}/>
+        <SearchForm filterNewsArticles={this.filterNewsArticles}/>
+        <NewsContainer currentlyDisplayed={this.state.currentlyDisplayed} filteredResult={this.state.filteredResult}/>
       </main>
     );
-  }
+  };
 }
 
 export default App;
