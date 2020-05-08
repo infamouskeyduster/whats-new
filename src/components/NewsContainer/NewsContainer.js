@@ -3,9 +3,16 @@ import './NewsContainer.css'
 import NewsArticle from '../NewsArticle/NewsArticle';
 
 const NewsContainer = (props) => {
-  const currentArticles = props.currentlyDisplayed.map(currentArticle => {
+  let placeholderArr = props.currentlyDisplayed; //Currently displayed shows ALL articles for a certain when clicked on
+
+  if (props.filteredResult.length) {
+    placeholderArr = props.filteredResult;
+  }
+
+  const currentArticles = placeholderArr.map(currentArticle => {
     return(
       <NewsArticle
+      key={currentArticle.id}
       headline={currentArticle.headline}
       description={currentArticle.description}
       img={currentArticle.img}
@@ -13,6 +20,7 @@ const NewsContainer = (props) => {
       />
     );
   });
+
   return(
     <aside className="news-articles-container">
       {currentArticles}
