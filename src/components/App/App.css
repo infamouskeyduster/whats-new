@@ -4,8 +4,12 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Montserrat';
+}
+
 .app {
-  background: #270c1e;
+  background: #152238;
   height: 100vh;
   /* text-align: center; */
   width: 100%;
