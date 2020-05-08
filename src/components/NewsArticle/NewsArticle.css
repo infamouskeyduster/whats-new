@@ -36,8 +36,8 @@
   align-self: center;
   margin-bottom: 5%;
   width: 90%;
-  background-color: #ffa500;
-  border: 1px solid #ffa500;
+  background-color: #f5bc5e;
+  border: 1px solid #f5bc5e;
 }
 
 .news-article p {
@@ -60,10 +60,11 @@
 #hyperlink {
   text-transform: uppercase;
   text-align: center;
-  font-size: .75rem;
+  font-size: .85rem;
+  font-weight: 500;
   padding-top: 5px;
   margin-bottom: 8px;
-  margin-left: 120px;
+  margin-left: 100px;
   color: #152238;
 }
 

@@ -20,12 +20,13 @@ class App extends Component {
       entertainment: entertainment,
       currentlyDisplayed: local,
       filteredResult: [],
+      currentlyDisplayedString: 'local',
     }
   };
 
   displaySelectedNews = (newsType) => {
     this.setState({filteredResult: []});
-    this.setState({currentlyDisplayed: this.state[newsType]});
+    this.setState({currentlyDisplayed: this.state[newsType], currentlyDisplayedString: newsType});
   };
 
   filterNewsArticles = (inputValue) => {
@@ -38,7 +39,7 @@ class App extends Component {
         }
       });
       this.setState({filteredResult: foundNewsArticle});
-      
+
     } else if (inputValue.length === 0) {
       this.setState({filteredResult: []});
     }
@@ -47,7 +48,7 @@ class App extends Component {
   render () {
     return (
       <main className="app">
-        <Menu displaySelectedNews={this.displaySelectedNews}/>
+        <Menu currentlyDisplayedString={this.state.currentlyDisplayedString} displaySelectedNews={this.displaySelectedNews}/>
         <SearchForm filterNewsArticles={this.filterNewsArticles}/>
         <NewsContainer currentlyDisplayed={this.state.currentlyDisplayed} filteredResult={this.state.filteredResult}/>
       </main>

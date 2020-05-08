@@ -52,8 +52,8 @@ button {
   color: #152238;
 }
 
-.menu-color-change {
-  background-color: #FF2600;
+.menu-active-state {
+  color: #800080;
 }
 
 img {
