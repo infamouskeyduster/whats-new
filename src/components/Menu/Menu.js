@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Menu.css'
 import EntertainmentIcon from '../../assets/entertainment_icon.svg';
 import HealthIcon from '../../assets/health_icon.svg';
