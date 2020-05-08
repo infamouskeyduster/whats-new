@@ -1,6 +1,5 @@
 .news-articles-container {
   grid-area: 2 / 2 / 6 / 6;
-  outline: 1px solid green;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
